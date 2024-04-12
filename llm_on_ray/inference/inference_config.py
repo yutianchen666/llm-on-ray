@@ -63,8 +63,8 @@ class Vllm(BaseModel):
         return v
 
 
-# for bigdl model
-class BigDLModelConfig(BaseModel):
+# for ipex-llm model
+class IpexllmModelConfig(BaseModel):
     load_in_low_bit: str = ""
 
     @validator("load_in_low_bit")
@@ -83,7 +83,7 @@ class GenerateResult(BaseModel):
 
 class ModelDescription(BaseModel):
     model_id_or_path: Union[str, None] = None
-    bigdl: bool = False
+    ipexllm: bool = False
     tokenizer_name_or_path: Union[str, None] = None
     chat_processor: Union[str, None] = None
     gpt_base_model: bool = False
@@ -95,7 +95,7 @@ class ModelDescription(BaseModel):
     use_hpu_graphs: bool = True
     prompt: Prompt = Prompt()
     config: ModelConfig = ModelConfig()
-    bigdl_config: BigDLModelConfig = BigDLModelConfig()
+    ipexllm_config: IpexllmModelConfig = IpexllmModelConfig()
 
     # prevent warning of protected namespaces
     # DO NOT TOUCH
