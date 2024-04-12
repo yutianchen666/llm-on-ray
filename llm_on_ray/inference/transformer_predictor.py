@@ -36,7 +36,7 @@ class TransformerPredictor(Predictor):
         # get correct torch type for loading HF model
         torch_dtype = get_torch_dtype(infer_conf, hf_config)
         if model_desc.bigdl:
-            from bigdl.llm.transformers import (
+            from ipex_llm.transformers import (
                 AutoModelForCausalLM as BigDLAutoModelForCLM,
             )
 
