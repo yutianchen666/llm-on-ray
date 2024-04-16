@@ -63,7 +63,7 @@ class Vllm(BaseModel):
         return v
 
 
-# for ipex-llm model
+# for IPEX-LLM model
 class IpexllmModelConfig(BaseModel):
     load_in_low_bit: str = ""
 
